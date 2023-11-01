@@ -1,0 +1,53 @@
+# Twitter API Integration with Spring Boot
+
+This Spring Boot application demonstrates how to integrate with the Twitter API to search for tweets by a user and retrieve tweets of a selected user. It provides RESTful endpoints for these functionalities.
+
+## Getting Started
+
+### Prerequisites
+
+- Java 11 or higher
+- Maven
+- Twitter Developer Account and API Credentials
+
+### Configuration
+
+1. Clone this repository to your local machine.
+
+2. Open the `src/main/resources/application.properties` file and add your Twitter API credentials:
+
+   ```properties
+   twitter.api.consumerKey=YOUR_CONSUMER_KEY
+   twitter.api.consumerSecret=YOUR_CONSUMER_SECRET
+
+ ###  Running the Application
+Open a terminal in the project directory and run the application using Maven:
+mvn spring-boot:run
+
+The Spring Boot application will start, and you can access the endpoints at
+ http://localhost:8080/api/twitter/searchUser and
+  http://localhost:8080/api/twitter/getUserTweets.
+  
+### API Endpoints
+Search Tweet User
+URL: /api/twitter/searchUser
+HTTP Method: GET
+Parameters:
+username (String): The Twitter username to search for.
+Description: Searches for tweets by the specified Twitter user.
+Get Tweets of the Selected User
+URL: /api/twitter/getUserTweets
+HTTP Method: GET
+Parameters:
+userId (String): The Twitter user ID to retrieve tweets for.
+Description: Retrieves tweets of the selected Twitter user.
+
+### Testing
+The application includes JUnit test cases for the TwitterController and TwitterService.
+ You can run the tests with the following command: mvn test
+ 
+ 
+### Notes
+Ensure that you have valid Twitter API credentials from your Twitter Developer account.
+This sample code provides basic functionality and error handling.
+ Customize it for your specific requirements and add more features as needed.
